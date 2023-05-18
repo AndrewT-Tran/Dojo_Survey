@@ -1,7 +1,31 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, flash
 app = Flask(__name__)
 # set a secret key for security purposes
 app.secret_key = 'keep it secret, keep it safe'
+
+class User:
+    def __init__(self, name, location, language, comment):
+        self.name = name
+        self.location = location
+        self.language = language
+        self.comment = comment
+
+
+@staticmethod
+def validate_user(user):
+    is_valid = True  # we assume this is true
+    if len(user.name) < 1:
+        flash("Name cannot be blank!")
+        is_valid = False
+    if len(user.comment) < 1:
+        flash("Comment cannot be blank!")
+        is_valid = False
+    if len(user.comment) > 120:
+        flash("Comment cannot be longer than 120 characters!")
+        is_valid = False
+    return is_valid
+
+
 
 
 @app.route('/')

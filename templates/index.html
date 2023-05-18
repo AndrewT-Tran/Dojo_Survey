@@ -17,49 +17,55 @@
     <header>
         <!-- place navbar here -->
     </header>
+
+
+
     <main>
         <form action="/submit_form" method="post">
-            <div class="container-fluid">
-                <div class="row m-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Your Name:</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" name="fullName" placeholder="ex: Andrew Tran">
-                    </div>
-                </div>
-
-                <div class="row m-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Dojo Location:</label>
-                    <div class="col-sm-3">
-                        <select id="dojoLocation" name="dojoLocation" class="form-select">
-                            <option>San Francisco</option>
-                            <option>Seattle</option>
-                            <option>Los Angeles</option>
-                        </select>
-                    </div>
-                    <label for="colFormLabel" class="col-sm-3 col-form-label">Favorite Language:</label>
-                    <div class="col-sm-4">
-                        <select id="favoriteLanguage" name="favoriteLanguage" class="form-select">
-                            <option>Python</option>
-                            <option>Javascript</option>
-                        </select>
+                <div class="container border border-3 border-primary mt-4">
+                    <div class="row m-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Your Name:</label>
+                        <div class="col">
+                            <input type="text" class="form-control" name="fullName" placeholder="ex: Andrew Tran">
+                        </div>
                     </div>
 
-                </div>
-                <div class="row m-3">
-                    <label for="colFormLabel" class="col-sm-2 col-form-label">Comment (optional):</label>
-                    <div class="col-sm-10">
-                        <textarea class="form-control" name="comment" rows="3"></textarea>
+                    <div class="row m-3">
+                        <label for="colFormLabel" class="col-2 col-form-label">Dojo Location:</label>
+                        <div class="col-sm-3">
+                            <select id="dojoLocation" name="dojoLocation" class="form-select">
+                                <option>San Francisco</option>
+                                <option>Seattle</option>
+                                <option>Los Angeles</option>
+                            </select>
+                        </div>
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Favorite Language:</label>
+                        <div class="col-sm-4">
+                            <select id="favoriteLanguage" name="favoriteLanguage" class="form-select">
+                                <option>Python</option>
+                                <option>Javascript</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="row m-3">
+                        <label for="colFormLabel" class="col-sm-2 col-form-label">Comment (optional):</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" name="comment" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="col-sm-10">
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
                     </div>
                 </div>
-                <div class="row m-3">
-                    <div class="col-sm-10">
-                        <input type="submit" value="Submit" class="btn btn-primary">
-                    </div>
-                </div>
-            </div>
         </form>
     </main>
     <footer>
+
+
+
         <!-- place footer here -->
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
@@ -73,3 +79,12 @@
 </body>
 
 </html>
+
+
+{% with messages = get_flashed_messages() %} <!-- declare a variable called messages -->
+{% if messages %} <!-- check if there are any messages -->
+{% for message in messages %} <!-- loop through the messages -->
+<p>{{message}}</p> <!-- display each message in a paragraph tag -->
+{% endfor %}
+{% endif %}
+{% endwith %}
