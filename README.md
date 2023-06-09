@@ -30,12 +30,13 @@ When you build this, please make sure that your program meets the following crit
 **Don't forget that any inputs we want to be able to access from the form submission need to have a name!**
 
 It's always a good idea to print request.form to see if the form is delivering all the information you need in your routing method.
-
-*   Create a new Flask application
+ Markup : - [ ] An uncompleted task
+          - [x] A completed task
+* Create a new Flask application
     
-*   Have the root route ("/") show a page with the form
+* Have the root route ("/") show a page with the form
     
-*   Have the "/result" route display the information from the form on a new HTML page
+* Have the "/result" route display the information from the form on a new HTML page
     
 *   Put the form data into session
     
