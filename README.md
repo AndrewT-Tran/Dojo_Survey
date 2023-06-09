@@ -12,8 +12,7 @@ Objectives:
 
 * * *
 
-![](https://assets.codingdojo.com/boomyeah2015/codingdojo/curriculum/content/chapter/1626195436__dojo_survey.gif)
-
+![image](https://github.com/AndrewT-Tran/Dojo_Survey/assets/112746783/c27c515a-f28a-447f-b465-b39254d7246c)
   
 
 Build a new Flask application that accepts a form submission and presents the submitted data on a results page.
