@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dojo Survey
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <form action="/create/survey" method="post" class="col-5 mx-auto border border-2 p-5 my-5 text-light bg-dark">
+            {% with messages = get_flashed_messages() %} <!-- declare a variable called messages -->
+            {% if messages %} <!-- check if there are any messages -->
+            {% for message in messages %} <!-- loop through the messages -->
+            <div class="alert alert-danger text-center" role="alert">
+                <strong class="h3 text-danger">ERROR</strong> <p class="h5 text-dark text-center">
+
+                    {{message}}
+                </p>
+            </div>
+
+
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <h1 class="text-primary text-center">Dojo Survey</h2>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="location">Dojo Location:</label>
+                <select name="dojo" id="dojo" class="form-control">
+                    <option value="">-- Select A Location --</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Online">Online</option>
+                    <option value="Burbank">Burbank</option>
+                    <option value="Bellevue">Bellevue</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="langauge">Favorite Language:</label>
+                <select name="language" id="language" class="form-control">
+                    <option value="">-- Select A Language --</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comments:</label>
+                <textarea name="comment" id="comments" class="form-control" cols="20" rows="5"></textarea>
+            </div>
+            <input type="submit" class="btn btn-warning btn-outline-secondary my-3" value="Submit">
+        </form>
+
+    </body>
+
+</html>
