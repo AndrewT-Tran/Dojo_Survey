@@ -20,7 +20,8 @@ class Survey:
     def get_last_survey(cls):
         query = "SELECT * FROM dojo_survey_schema.surveys ORDER BY id DESC LIMIT 1; "
         results = connectToMySQL(db).query_db(query)
-
+        return cls(results[0])
+    
 
     @staticmethod
     def is_valid(survey):

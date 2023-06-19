@@ -18,4 +18,4 @@ def create_survey():
 @app.route('/results')
 def results():
     surveys = Survey.get_last_survey()
-    return render_template('result.html', surveys = surveys)
+    return render_template("results.html",surveys=surveys)
